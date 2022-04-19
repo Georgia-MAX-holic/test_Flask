@@ -1,7 +1,5 @@
 from flask import Flask, render_template , request
-import pickle
-import numpy as np
-from jinja2 import Template
+
 import pandas as pd
 
 import joblib
@@ -19,16 +17,6 @@ def index():
 def blank():
     return render_template('blank.html')
 
-
-
-@app.route("/DashBoard")
-def DashBoard():
-    return render_template("DashBoard.html")
-
-@app.route("/News")
-def News():
-    return render_template("News.html")
-
 @app.route("/calculate", methods=['POST',"GET"])
 def calculate():
     return render_template("calculate.html")
@@ -45,7 +33,7 @@ def home():
 "누적확진":data3,
 }, index=[0])
     pred = model.predict(arr)
-    data = pred
+    data = int(pred)
     return render_template("cal_after.html" , data=data)
 
 

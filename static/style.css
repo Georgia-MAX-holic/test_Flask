@@ -7,3 +7,11 @@
 .menu{
 font-size: .6rem;
 }
+
+.header{
+    background-color: aquamarine;
+}
+
+.calculate{
+    text-align:center; margin-top:2rem;
+}

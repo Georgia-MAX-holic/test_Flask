@@ -4,8 +4,8 @@
 
 
 {% block content %}
+<div class="calculate">
         <h1> calculate Covid confirmed</h1><br>
-        
         <form method="POST", action="{{url_for('home')}}">
             <b> First value :  <input type="number", name='region_p', placeholder="region_p"> <br><br>
             Second value :  <input type="number", name='death', placeholder="death"> <br><br>
@@ -13,7 +13,7 @@
 
             <input type="submit" , value='Enter' >            
         </form>
-
+</div>
 {% endblock %}
 
 

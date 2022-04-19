@@ -4,7 +4,8 @@ import numpy as np
 from jinja2 import Template
 import pandas as pd
 
-model = pickle.load(open('model/COVID_19.pkl','rb'))
+import joblib
+model = joblib.load('model/COVID_19.pkl')
     
 app = Flask(__name__)
 
@@ -42,10 +43,10 @@ def home():
 '지역별인구수':data1,
 "사망자":data2,
 "누적확진":data3,
-})
+}, index=[0])
     pred = model.predict(arr)
     data = pred
-    return render_template("cal_after.html" , data)
+    return render_template("cal_after.html" , data=data)
 
 
 

@@ -9,13 +9,17 @@ app = Flask(__name__)
 
 
 @app.route("/")
-@app.route("/index")
-def index():
-    return render_template('base.html')
+@app.route("/front")
+def front():
+    return render_template('front.html')
 
 @app.route('/blank')
 def blank():
     return render_template('blank.html')
+
+@app.route('/News')
+def News():
+    return render_template('News.html')
 
 @app.route("/calculate", methods=['POST',"GET"])
 def calculate():
